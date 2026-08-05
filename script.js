@@ -1,5 +1,5 @@
 // NUMERO DE TELEFONO DE CONTACTO ACTUALIZADO
-const PHONE_NUMBER = "5493888650351"; 
+const PHONE_NUMBER = "5493888650351";
 
 // Lista exacta de las imágenes subidas en el repositorio
 const imagesList = [

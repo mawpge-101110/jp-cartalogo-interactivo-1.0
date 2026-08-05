@@ -18,7 +18,7 @@ const imagesList = [
     "WhatsApp Image 2026-07-23 at 13.33.33 (1).jpeg",
     "WhatsApp Image 2026-07-23 at 13.33.33 (2).jpeg",
     "WhatsApp Image 2026-07-23 at 13.33.33.jpeg",
-    "WhatsApp Image 2026-07-23 at 13.33.34 (1).jpeg",
+   "WhatsApp Image 2026-07-23 at 13.33.34 (1).jpeg",
     "WhatsApp Image 2026-07-23 at 13.33.34.jpeg",
     "WhatsApp Image 2026-07-23 at 13.33.35 (1).jpeg",
     "WhatsApp Image 2026-07-23 at 13.33.35 (2).jpeg",

@@ -1,5 +1,5 @@
 // NUMERO DE TELEFONO DE CONTACTO ACTUALIZADO
-const PHONE_NUMBER = "549388860351"; 
+const PHONE_NUMBER = "5493888650351"; 
 
 // Lista exacta de las imágenes subidas en el repositorio
 const imagesList = [
@@ -32,7 +32,7 @@ const imagesList = [
     "WhatsApp Image 2026-07-23 at 13.35.06.jpeg",
     "WhatsApp Image 2026-07-23 at 13.35.07.jpeg",
     "WhatsApp Image 2026-07-23 at 13.35.09.jpeg",
-    "WhatsApp Image 2026-07-23 at 14.03.05.jpeg"
+    "WhatsApp Image 2026-07-23 at 14.03.05.jpeg",
     "WhatsApp Image 2026-08-05 at 18.58.28 (1).jpeg",
     "WhatsApp Image 2026-08-05 at 18.58.28.jpeg",
     "WhatsApp Image 2026-08-05 at 18.58.29.jpeg",

@@ -7,7 +7,7 @@ const closeModal = document.getElementsByClassName('close-modal')[0];
 
 const phoneNumber = "5493888650351";
 
-// Lista con tus 52 imágenes
+// Lista completa con tus 52 imágenes
 const imagesList = [
     "WhatsApp Image 2026-07-23 at 13.33.22.jpeg",
     "WhatsApp Image 2026-07-23 at 13.33.26.jpeg",
@@ -68,42 +68,45 @@ imagesList.forEach((filename, index) => {
     const card = document.createElement('div');
     card.classList.add('gallery-card');
 
+    const imgContainer = document.createElement('div');
+    imgContainer.classList.add('card-img-wrapper');
+
     const img = document.createElement('img');
     img.src = filename;
     img.alt = `Modelo / Trofeo #${index + 1}`;
     img.loading = "lazy";
 
-    const title = document.createElement('p');
-    title.innerText = `Modelo / Trofeo #${index + 1}`;
+    imgContainer.appendChild(img);
+
+    const info = document.createElement('div');
+    info.classList.add('card-info');
+
+    const title = document.createElement('h3');
+    title.innerText = `Modelo #${index + 1}`;
 
     const btn = document.createElement('button');
     btn.classList.add('btn-consultar');
-    btn.innerText = 'Consultar Modelo';
+    btn.innerHTML = '<i class="fa-brands fa-whatsapp"></i> Consultar';
 
-    card.appendChild(img);
-    card.appendChild(title);
-    card.appendChild(btn);
+    info.appendChild(title);
+    info.appendChild(btn);
 
-    // Evento al hacer clic en una tarjeta
+    card.appendChild(imgContainer);
+    card.appendChild(info);
+
+    // Evento Zoom Modal
     card.addEventListener('click', () => {
-        modal.style.display = "block";
+        modal.style.display = "flex";
         modalImg.src = filename;
-        captionText.innerHTML = `Modelo / Trofeo #${index + 1}`;
+        captionText.innerText = `Modelo / Trofeo #${index + 1}`;
         
-        const textMessage = encodeURIComponent(`Hola! Me interesa consultar por el Modelo / Trofeo #${index + 1} de la página web.`);
+        const textMessage = encodeURIComponent(`Hola! Me interesa consultar por el Modelo #${index + 1} del catálogo web.`);
         modalWaBtn.href = `https://wa.me/${phoneNumber}?text=${textMessage}`;
     });
 
     galleryContainer.appendChild(card);
 });
 
-// Cerrar Modal al hacer clic en la X o fuera del contenido
-closeModal.addEventListener('click', () => {
-    modal.style.display = "none";
-});
-
-window.addEventListener('click', (e) => {
-    if (e.target === modal) {
-        modal.style.display = "none";
-    }
-});
+// Cerrar Modal
+closeModal.addEventListener('click', () => { modal.style.display = "none"; });
+window.addEventListener('click', (e) => { if (e.target === modal) modal.style.display = "none"; });

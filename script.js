@@ -33,6 +33,14 @@ const imagesList = [
     "WhatsApp Image 2026-07-23 at 13.35.07.jpeg",
     "WhatsApp Image 2026-07-23 at 13.35.09.jpeg",
     "WhatsApp Image 2026-07-23 at 14.03.05.jpeg"
+    "WhatsApp Image 2026-08-05 at 18.58.28 (1).jpeg",
+    "WhatsApp Image 2026-08-05 at 18.58.28.jpeg",
+    "WhatsApp Image 2026-08-05 at 18.58.29.jpeg",
+    "WhatsApp Image 2026-08-05 at 18.58.30.jpeg",
+    "WhatsApp Image 2026-08-05 at 18.58.31 (1).jpeg",
+    "WhatsApp Image 2026-08-05 at 18.58.31 (2).jpeg",
+    "WhatsApp Image 2026-08-05 at 18.58.57.jpeg",
+    "WhatsApp Image 2026-08-05 at 18.58.58.jpeg"
 ];
 
 const galleryContainer = document.getElementById('gallery');

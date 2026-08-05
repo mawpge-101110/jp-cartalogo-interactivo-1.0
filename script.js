@@ -1,5 +1,5 @@
-// NUMERO DE TELEFONO DE CONTACTO (Remplaza con tu número de WhatsApp real con código de país)
-const PHONE_NUMBER = "549388860351";
+// NUMERO DE TELEFONO DE CONTACTO ACTUALIZADO
+const PHONE_NUMBER = "549388860351"; 
 
 // Lista exacta de las imágenes subidas en el repositorio
 const imagesList = [
@@ -41,16 +41,16 @@ const modalImg = document.getElementById('imgFull');
 const captionText = document.getElementById('caption');
 const modalWaBtn = document.getElementById('modalWaBtn');
 
-// Generar cada tarjeta de la galería
+// Generar tarjetas
+galleryContainer.innerHTML = '';
 imagesList.forEach((filename, index) => {
-    // Al estar subidas directamente en el repo, usaremos la ruta relativa con encodeURIComponent
     const imgPath = encodeURIComponent(filename);
     const itemTitle = `Modelo / Trofeo #${index + 1}`;
     
     const card = document.createElement('div');
     card.className = 'card';
     
-    const waText = encodeURIComponent(`Hola! Quiero consultar por el ${itemTitle} (${filename})`);
+    const waText = encodeURIComponent(`Hola! Quiero consultar por el ${itemTitle}`);
     const waUrl = `https://wa.me/${PHONE_NUMBER}?text=${waText}`;
 
     card.innerHTML = `
@@ -68,7 +68,7 @@ imagesList.forEach((filename, index) => {
     galleryContainer.appendChild(card);
 });
 
-// Función para abrir el Zoom
+// Abrir Zoom
 function openZoom(src, title, waLink) {
     modal.style.display = "flex";
     modalImg.src = src;

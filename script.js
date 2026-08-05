@@ -1,5 +1,5 @@
 // NUMERO DE TELEFONO DE CONTACTO (Remplaza con tu número de WhatsApp real con código de país)
-const PHONE_NUMBER = "5493888000000"; 
+const PHONE_NUMBER = "549388860351";
 
 // Lista exacta de las imágenes subidas en el repositorio
 const imagesList = [

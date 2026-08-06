@@ -60,7 +60,7 @@ const imagesList = [
     "WhatsApp Image 2026-08-05 at 18.58.33 (1).jpeg",
     "WhatsApp Image 2026-08-05 at 18.58.33 (2).jpeg",
     "WhatsApp Image 2026-08-05 at 18.58.34.jpeg",
-    "WhatsApp Image 2026-08-05 at 18.58.34 (1).jpeg"
+   
 ];
 
 // Generar la galería dinámicamente

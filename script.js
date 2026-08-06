@@ -7,7 +7,7 @@ const closeModal = document.getElementsByClassName('close-modal')[0];
 
 const phoneNumber = "5493888650351";
 
-// Lista completa con tus 52 imágenes
+// Lista completa con todas tus imágenes
 const imagesList = [
     "WhatsApp Image 2026-07-23 at 13.33.22.jpeg",
     "WhatsApp Image 2026-07-23 at 13.33.26.jpeg",
@@ -60,7 +60,11 @@ const imagesList = [
     "WhatsApp Image 2026-08-05 at 18.58.33 (1).jpeg",
     "WhatsApp Image 2026-08-05 at 18.58.33 (2).jpeg",
     "WhatsApp Image 2026-08-05 at 18.58.34.jpeg",
-   
+    "WhatsApp Image 2026-08-05 at 18.58.58.jpeg",
+    "WhatsApp Image 2026-08-06 at 12.06.46.jpeg",
+    "WhatsApp Image 2026-08-06 at 12.06.47 (1).jpeg",
+    "WhatsApp Image 2026-08-06 at 12.06.47.jpeg",
+    "WhatsApp Image 2026-08-06 at 12.06.48.jpeg"
 ];
 
 // Generar la galería dinámicamente

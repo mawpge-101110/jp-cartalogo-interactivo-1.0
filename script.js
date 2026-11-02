@@ -7,7 +7,7 @@ const closeModal = document.getElementsByClassName('close-modal')[0];
 
 const phoneNumber = "5493888650351";
 
-// Lista completa con todas tus imágenes (sin paginación, todas juntas)
+// Lista completa con todas tus imágenes
 const imagesList = [
     "WhatsApp Image 2026-07-23 at 13.33.22.jpeg",
     "WhatsApp Image 2026-07-23 at 13.33.26.jpeg",
@@ -64,27 +64,27 @@ const imagesList = [
     "WhatsApp Image 2026-08-06 at 12.06.46.jpeg",
     "WhatsApp Image 2026-08-06 at 12.06.47 (1).jpeg",
     "WhatsApp Image 2026-08-06 at 12.06.47.jpeg",
-    "WhatsApp Image 2026-08-06 at 12.06.48.jpeg",
-    "WhatsApp Image 2026-10-29 at 16.45.18 (1).jpeg",
-    "WhatsApp Image 2026-10-29 at 16.45.18 (2).jpeg",
-    "WhatsApp Image 2026-10-29 at 16.45.20 (1).jpeg",
-    "WhatsApp Image 2026-10-29 at 16.45.20.jpeg",
-    "WhatsApp Image 2026-10-29 at 16.45.20 (2).jpeg",
-    "WhatsApp Image 2026-10-29 at 16.45.21.jpeg",
-    "WhatsApp Image 2026-10-29 at 16.45.21 (1).jpeg",
-    "WhatsApp Image 2026-10-29 at 16.45.22.jpeg",
-    "WhatsApp Image 2026-10-29 at 16.45.23 (1).jpeg",
-    "WhatsApp Image 2026-10-29 at 16.45.23.jpeg",
-    "WhatsApp Image 2026-10-29 at 16.45.23 (2).jpeg",
-    "WhatsApp Image 2026-10-29 at 16.45.21 (2).jpeg",
-    "WhatsApp Image 2026-10-29 at 16.45.19.jpeg",
-    "WhatsApp Image 2026-10-29 at 16.45.19 (1).jpeg",
-    "WhatsApp Image 2026-10-29 at 16.45.22 (1).jpeg",
-    "WhatsApp Image 2026-10-29 at 16.45.22 (2).jpeg",
-    "WhatsApp Image 2026-10-29 at 16.45.23 (3).jpeg"
+    "WhatsApp Image 2026-08-06 at 12.06.48.jpeg"
+   "WhatsApp Image 2026-10-29 at 16.45.18 (1).jpeg" },
+  "WhatsApp Image 2026-10-29 at 16.45.18 (2).jpeg" },
+ "WhatsApp Image 2026-10-29 at 16.45.20 (1).jpeg" },
+  "WhatsApp Image 2026-10-29 at 16.45.20.jpeg" },
+   "WhatsApp Image 2026-10-29 at 16.45.20 (2).jpeg" },
+ "WhatsApp Image 2026-10-29 at 16.45.21.jpeg" },
+ "WhatsApp Image 2026-10-29 at 16.45.21 (1).jpeg" },
+ "WhatsApp Image 2026-10-29 at 16.45.22.jpeg" },
+   "WhatsApp Image 2026-10-29 at 16.45.23 (1).jpeg" },
+   "WhatsApp Image 2026-10-29 at 16.45.23.jpeg" },
+ "WhatsApp Image 2026-10-29 at 16.45.23 (2).jpeg" },
+   "WhatsApp Image 2026-10-29 at 16.45.21 (2).jpeg" },
+"WhatsApp Image 2026-10-29 at 16.45.19.jpeg" },
+  "WhatsApp Image 2026-10-29 at 16.45.19 (1).jpeg" },
+ "WhatsApp Image 2026-10-29 at 16.45.22 (1).jpeg" },
+"WhatsApp Image 2026-10-29 at 16.45.22 (2).jpeg" },
+  "WhatsApp Image 2026-10-29 at 16.45.23 (3).jpeg" }
 ];
 
-// Generar la galería dinámicamente hacia abajo en una sola vista
+// Generar la galería dinámicamente
 imagesList.forEach((filename, index) => {
     const card = document.createElement('div');
     card.classList.add('gallery-card');
@@ -94,7 +94,7 @@ imagesList.forEach((filename, index) => {
 
     const img = document.createElement('img');
     img.src = filename;
-    img.alt = `Modelo / Trofeo #${index + 1}`;
+    img.alt = Modelo / Trofeo #${index + 1};
     img.loading = "lazy";
 
     imgContainer.appendChild(img);
@@ -103,7 +103,7 @@ imagesList.forEach((filename, index) => {
     info.classList.add('card-info');
 
     const title = document.createElement('h3');
-    title.innerText = `Modelo #${index + 1}`;
+    title.innerText = Modelo #${index + 1};
 
     const btn = document.createElement('button');
     btn.classList.add('btn-consultar');
@@ -119,10 +119,10 @@ imagesList.forEach((filename, index) => {
     card.addEventListener('click', () => {
         modal.style.display = "flex";
         modalImg.src = filename;
-        captionText.innerText = `Modelo / Trofeo #${index + 1}`;
+        captionText.innerText = Modelo / Trofeo #${index + 1};
         
-        const textMessage = encodeURIComponent(`Hola! Me interesa consultar por el Modelo #${index + 1} del catálogo web.`);
-        modalWaBtn.href = `https://wa.me/${phoneNumber}?text=${textMessage}`;
+        const textMessage = encodeURIComponent(Hola! Me interesa consultar por el Modelo #${index + 1} del catálogo web.);
+        modalWaBtn.href = https://wa.me/${phoneNumber}?text=${textMessage};
     });
 
     galleryContainer.appendChild(card);

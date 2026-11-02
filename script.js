@@ -1,134 +1,138 @@
-const galleryContainer = document.getElementById('gallery');
-const modal = document.getElementById('imageModal');
-const modalImg = document.getElementById('imgFull');
-const captionText = document.getElementById('caption');
-const modalWaBtn = document.getElementById('modalWaBtn');
-const closeModal = document.getElementsByClassName('close-modal')[0];
+document.addEventListener("DOMContentLoaded", () => {
+    const galleryContainer = document.getElementById('gallery') || document.getElementById('catalogContainer') || document.querySelector('.gallery');
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('imgFull');
+    const captionText = document.getElementById('caption');
+    const modalWaBtn = document.getElementById('modalWaBtn');
+    const closeModal = document.querySelector('.close-modal') || document.getElementsByClassName('close-modal')[0];
 
-const phoneNumber = "5493888650351";
+    const phoneNumber = "5493888650351";
 
-// Lista completa con todas tus imágenes (viejas y nuevas juntas en texto plano)
-const imagesList = [
-    "WhatsApp Image 2026-07-23 at 13.33.22.jpeg",
-    "WhatsApp Image 2026-07-23 at 13.33.26.jpeg",
-    "WhatsApp Image 2026-07-23 at 13.33.27.jpeg",
-    "WhatsApp Image 2026-07-23 at 13.33.27 (1).jpeg",
-    "WhatsApp Image 2026-07-23 at 13.33.28.jpeg",
-    "WhatsApp Image 2026-07-23 at 13.33.28 (1).jpeg",
-    "WhatsApp Image 2026-07-23 at 13.33.29.jpeg",
-    "WhatsApp Image 2026-07-23 at 13.33.30.jpeg",
-    "WhatsApp Image 2026-07-23 at 13.33.30 (1).jpeg",
-    "WhatsApp Image 2026-07-23 at 13.33.31 (1).jpeg",
-    "WhatsApp Image 2026-07-23 at 13.33.31.jpeg",
-    "WhatsApp Image 2026-07-23 at 13.33.32.jpeg",
-    "WhatsApp Image 2026-07-23 at 13.33.33.jpeg",
-    "WhatsApp Image 2026-07-23 at 13.33.33 (1).jpeg",
-    "WhatsApp Image 2026-07-23 at 13.33.33 (2).jpeg",
-    "WhatsApp Image 2026-07-23 at 13.33.34 (1).jpeg",
-    "WhatsApp Image 2026-07-23 at 13.33.34.jpeg",
-    "WhatsApp Image 2026-07-23 at 13.33.35.jpeg",
-    "WhatsApp Image 2026-07-23 at 13.33.35 (1).jpeg",
-    "WhatsApp Image 2026-07-23 at 13.33.35 (2).jpeg",
-    "WhatsApp Image 2026-07-23 at 13.33.36.jpeg",
-    "WhatsApp Image 2026-07-23 at 13.33.36 (1).jpeg",
-    "WhatsApp Image 2026-07-23 at 13.33.36 (2).jpeg",
-    "WhatsApp Image 2026-07-23 at 13.33.37.jpeg",
-    "WhatsApp Image 2026-07-23 at 13.35.05.jpeg",
-    "WhatsApp Image 2026-07-23 at 13.35.05 (1).jpeg",
-    "WhatsApp Image 2026-07-23 at 13.35.06.jpeg",
-    "WhatsApp Image 2026-07-23 at 13.35.07.jpeg",
-    "WhatsApp Image 2026-07-23 at 13.35.09.jpeg",
-    "WhatsApp Image 2026-07-23 at 14.03.05.jpeg",
-    "WhatsApp Image 2026-08-05 at 18.58.56 (1).jpeg",
-    "WhatsApp Image 2026-08-05 at 18.58.56.jpeg",
-    "WhatsApp Image 2026-08-05 at 18.58.57.jpeg",
-    "WhatsApp Image 2026-08-05 at 18.58.19.jpeg",
-    "WhatsApp Image 2026-08-05 at 18.58.20.jpeg",
-    "WhatsApp Image 2026-08-05 at 18.58.21.jpeg",
-    "WhatsApp Image 2026-08-05 at 18.58.22.jpeg",
-    "WhatsApp Image 2026-08-05 at 18.58.28.jpeg",
-    "WhatsApp Image 2026-08-05 at 18.58.28 (1).jpeg",
-    "WhatsApp Image 2026-08-05 at 18.58.29.jpeg",
-    "WhatsApp Image 2026-08-05 at 18.58.30.jpeg",
-    "WhatsApp Image 2026-08-05 at 18.58.31 (1).jpeg",
-    "WhatsApp Image 2026-08-05 at 18.58.31.jpeg",
-    "WhatsApp Image 2026-08-05 at 18.58.31 (2).jpeg",
-    "WhatsApp Image 2026-08-05 at 18.58.32.jpeg",
-    "WhatsApp Image 2026-08-05 at 18.58.32 (1).jpeg",
-    "WhatsApp Image 2026-08-05 at 18.58.32 (2).jpeg",
-    "WhatsApp Image 2026-08-05 at 18.58.33.jpeg",
-    "WhatsApp Image 2026-08-05 at 18.58.33 (1).jpeg",
-    "WhatsApp Image 2026-08-05 at 18.58.33 (2).jpeg",
-    "WhatsApp Image 2026-08-05 at 18.58.34.jpeg",
-    "WhatsApp Image 2026-08-05 at 18.58.58.jpeg",
-    "WhatsApp Image 2026-08-06 at 12.06.46.jpeg",
-    "WhatsApp Image 2026-08-06 at 12.06.47 (1).jpeg",
-    "WhatsApp Image 2026-08-06 at 12.06.47.jpeg",
-    "WhatsApp Image 2026-08-06 at 12.06.48.jpeg",
-    // Nuevas imágenes añadidas correctamente en texto plano:
-    "WhatsApp Image 2026-10-29 at 16.45.18 (1).jpeg",
-    "WhatsApp Image 2026-10-29 at 16.45.18 (2).jpeg",
-    "WhatsApp Image 2026-10-29 at 16.45.20 (1).jpeg",
-    "WhatsApp Image 2026-10-29 at 16.45.20.jpeg",
-    "WhatsApp Image 2026-10-29 at 16.45.20 (2).jpeg",
-    "WhatsApp Image 2026-10-29 at 16.45.21.jpeg",
-    "WhatsApp Image 2026-10-29 at 16.45.21 (1).jpeg",
-    "WhatsApp Image 2026-10-29 at 16.45.22.jpeg",
-    "WhatsApp Image 2026-10-29 at 16.45.23 (1).jpeg",
-    "WhatsApp Image 2026-10-29 at 16.45.23.jpeg",
-    "WhatsApp Image 2026-10-29 at 16.45.23 (2).jpeg",
-    "WhatsApp Image 2026-10-29 at 16.45.21 (2).jpeg",
-    "WhatsApp Image 2026-10-29 at 16.45.19.jpeg",
-    "WhatsApp Image 2026-10-29 at 16.45.19 (1).jpeg",
-    "WhatsApp Image 2026-10-29 at 16.45.22 (1).jpeg",
-    "WhatsApp Image 2026-10-29 at 16.45.22 (2).jpeg",
-    "WhatsApp Image 2026-10-29 at 16.45.23 (3).jpeg"
-];
+    const imagesList = [
+        "WhatsApp Image 2026-07-23 at 13.33.22.jpeg",
+        "WhatsApp Image 2026-07-23 at 13.33.26.jpeg",
+        "WhatsApp Image 2026-07-23 at 13.33.27.jpeg",
+        "WhatsApp Image 2026-07-23 at 13.33.27 (1).jpeg",
+        "WhatsApp Image 2026-07-23 at 13.33.28.jpeg",
+        "WhatsApp Image 2026-07-23 at 13.33.28 (1).jpeg",
+        "WhatsApp Image 2026-07-23 at 13.33.29.jpeg",
+        "WhatsApp Image 2026-07-23 at 13.33.30.jpeg",
+        "WhatsApp Image 2026-07-23 at 13.33.30 (1).jpeg",
+        "WhatsApp Image 2026-07-23 at 13.33.31 (1).jpeg",
+        "WhatsApp Image 2026-07-23 at 13.33.31.jpeg",
+        "WhatsApp Image 2026-07-23 at 13.33.32.jpeg",
+        "WhatsApp Image 2026-07-23 at 13.33.33.jpeg",
+        "WhatsApp Image 2026-07-23 at 13.33.33 (1).jpeg",
+        "WhatsApp Image 2026-07-23 at 13.33.33 (2).jpeg",
+        "WhatsApp Image 2026-07-23 at 13.33.34 (1).jpeg",
+        "WhatsApp Image 2026-07-23 at 13.33.34.jpeg",
+        "WhatsApp Image 2026-07-23 at 13.33.35.jpeg",
+        "WhatsApp Image 2026-07-23 at 13.33.35 (1).jpeg",
+        "WhatsApp Image 2026-07-23 at 13.33.35 (2).jpeg",
+        "WhatsApp Image 2026-07-23 at 13.33.36.jpeg",
+        "WhatsApp Image 2026-07-23 at 13.33.36 (1).jpeg",
+        "WhatsApp Image 2026-07-23 at 13.33.36 (2).jpeg",
+        "WhatsApp Image 2026-07-23 at 13.33.37.jpeg",
+        "WhatsApp Image 2026-07-23 at 13.35.05.jpeg",
+        "WhatsApp Image 2026-07-23 at 13.35.05 (1).jpeg",
+        "WhatsApp Image 2026-07-23 at 13.35.06.jpeg",
+        "WhatsApp Image 2026-07-23 at 13.35.07.jpeg",
+        "WhatsApp Image 2026-07-23 at 13.35.09.jpeg",
+        "WhatsApp Image 2026-07-23 at 14.03.05.jpeg",
+        "WhatsApp Image 2026-08-05 at 18.58.56 (1).jpeg",
+        "WhatsApp Image 2026-08-05 at 18.58.56.jpeg",
+        "WhatsApp Image 2026-08-05 at 18.58.57.jpeg",
+        "WhatsApp Image 2026-08-05 at 18.58.19.jpeg",
+        "WhatsApp Image 2026-08-05 at 18.58.20.jpeg",
+        "WhatsApp Image 2026-08-05 at 18.58.21.jpeg",
+        "WhatsApp Image 2026-08-05 at 18.58.22.jpeg",
+        "WhatsApp Image 2026-08-05 at 18.58.28.jpeg",
+        "WhatsApp Image 2026-08-05 at 18.58.28 (1).jpeg",
+        "WhatsApp Image 2026-08-05 at 18.58.29.jpeg",
+        "WhatsApp Image 2026-08-05 at 18.58.30.jpeg",
+        "WhatsApp Image 2026-08-05 at 18.58.31 (1).jpeg",
+        "WhatsApp Image 2026-08-05 at 18.58.31.jpeg",
+        "WhatsApp Image 2026-08-05 at 18.58.31 (2).jpeg",
+        "WhatsApp Image 2026-08-05 at 18.58.32.jpeg",
+        "WhatsApp Image 2026-08-05 at 18.58.32 (1).jpeg",
+        "WhatsApp Image 2026-08-05 at 18.58.32 (2).jpeg",
+        "WhatsApp Image 2026-08-05 at 18.58.33.jpeg",
+        "WhatsApp Image 2026-08-05 at 18.58.33 (1).jpeg",
+        "WhatsApp Image 2026-08-05 at 18.58.33 (2).jpeg",
+        "WhatsApp Image 2026-08-05 at 18.58.34.jpeg",
+        "WhatsApp Image 2026-08-05 at 18.58.58.jpeg",
+        "WhatsApp Image 2026-08-06 at 12.06.46.jpeg",
+        "WhatsApp Image 2026-08-06 at 12.06.47 (1).jpeg",
+        "WhatsApp Image 2026-08-06 at 12.06.47.jpeg",
+        "WhatsApp Image 2026-08-06 at 12.06.48.jpeg",
+        "WhatsApp Image 2026-10-29 at 16.45.18 (1).jpeg",
+        "WhatsApp Image 2026-10-29 at 16.45.18 (2).jpeg",
+        "WhatsApp Image 2026-10-29 at 16.45.20 (1).jpeg",
+        "WhatsApp Image 2026-10-29 at 16.45.20.jpeg",
+        "WhatsApp Image 2026-10-29 at 16.45.20 (2).jpeg",
+        "WhatsApp Image 2026-10-29 at 16.45.21.jpeg",
+        "WhatsApp Image 2026-10-29 at 16.45.21 (1).jpeg",
+        "WhatsApp Image 2026-10-29 at 16.45.22.jpeg",
+        "WhatsApp Image 2026-10-29 at 16.45.23 (1).jpeg",
+        "WhatsApp Image 2026-10-29 at 16.45.23.jpeg",
+        "WhatsApp Image 2026-10-29 at 16.45.23 (2).jpeg",
+        "WhatsApp Image 2026-10-29 at 16.45.21 (2).jpeg",
+        "WhatsApp Image 2026-10-29 at 16.45.19.jpeg",
+        "WhatsApp Image 2026-10-29 at 16.45.19 (1).jpeg",
+        "WhatsApp Image 2026-10-29 at 16.45.22 (1).jpeg",
+        "WhatsApp Image 2026-10-29 at 16.45.22 (2).jpeg",
+        "WhatsApp Image 2026-10-29 at 16.45.23 (3).jpeg"
+    ];
 
-// Generar la galería dinámicamente de forma continua hacia abajo
-imagesList.forEach((filename, index) => {
-    const card = document.createElement('div');
-    card.classList.add('gallery-card');
+    if (!galleryContainer) {
+        console.error("No se encontró el contenedor de la galería.");
+        return;
+    }
 
-    const imgContainer = document.createElement('div');
-    imgContainer.classList.add('card-img-wrapper');
+    imagesList.forEach((filename, index) => {
+        const card = document.createElement('div');
+        card.classList.add('gallery-card');
 
-    const img = document.createElement('img');
-    img.src = filename;
-    img.alt = `Modelo / Trofeo #${index + 1}`;
-    img.loading = "lazy";
+        const imgContainer = document.createElement('div');
+        imgContainer.classList.add('card-img-wrapper');
 
-    imgContainer.appendChild(img);
+        const img = document.createElement('img');
+        img.src = filename;
+        img.alt = `Modelo / Trofeo #${index + 1}`;
+        img.loading = "lazy";
 
-    const info = document.createElement('div');
-    info.classList.add('card-info');
+        imgContainer.appendChild(img);
 
-    const title = document.createElement('h3');
-    title.innerText = `Modelo #${index + 1}`;
+        const info = document.createElement('div');
+        info.classList.add('card-info');
 
-    const btn = document.createElement('button');
-    btn.classList.add('btn-consultar');
-    btn.innerHTML = '<i class="fa-brands fa-whatsapp"></i> Consultar';
+        const title = document.createElement('h3');
+        title.innerText = `Modelo #${index + 1}`;
 
-    info.appendChild(title);
-    info.appendChild(btn);
+        const btn = document.createElement('button');
+        btn.classList.add('btn-consultar');
+        btn.innerHTML = '<i class="fa-brands fa-whatsapp"></i> Consultar';
 
-    card.appendChild(imgContainer);
-    card.appendChild(info);
+        info.appendChild(title);
+        info.appendChild(btn);
 
-    // Evento Zoom Modal
-    card.addEventListener('click', () => {
-        modal.style.display = "flex";
-        modalImg.src = filename;
-        captionText.innerText = `Modelo / Trofeo #${index + 1}`;
-        
-        const textMessage = encodeURIComponent(`Hola! Me interesa consultar por el Modelo #${index + 1} del catálogo web.`);
-        modalWaBtn.href = `https://wa.me/${phoneNumber}?text=${textMessage}`;
+        card.appendChild(imgContainer);
+        card.appendChild(info);
+
+        card.addEventListener('click', () => {
+            if (modal) modal.style.display = "flex";
+            if (modalImg) modalImg.src = filename;
+            if (captionText) captionText.innerText = `Modelo / Trofeo #${index + 1}`;
+            
+            const textMessage = encodeURIComponent(`Hola! Me interesa consultar por el Modelo #${index + 1} del catálogo web.`);
+            if (modalWaBtn) modalWaBtn.href = `https://wa.me/${phoneNumber}?text=${textMessage}`;
+        });
+
+        galleryContainer.appendChild(card);
     });
 
-    galleryContainer.appendChild(card);
+    if (closeModal) {
+        closeModal.addEventListener('click', () => { if (modal) modal.style.display = "none"; });
+    }
+    window.addEventListener('click', (e) => { if (e.target === modal) modal.style.display = "none"; });
 });
-
-// Cerrar Modal
-closeModal.addEventListener('click', () => { modal.style.display = "none"; });
-window.addEventListener('click', (e) => { if (e.target === modal) modal.style.display = "none"; });

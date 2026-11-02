@@ -7,7 +7,7 @@ const closeModal = document.getElementsByClassName('close-modal')[0];
 
 const phoneNumber = "5493888650351";
 
-// Lista completa con todas tus imágenes (viejas y nuevas juntas en una sola lista)
+// Lista completa con todas tus imágenes (sin paginación, todas juntas)
 const imagesList = [
     "WhatsApp Image 2026-07-23 at 13.33.22.jpeg",
     "WhatsApp Image 2026-07-23 at 13.33.26.jpeg",
@@ -84,7 +84,7 @@ const imagesList = [
     "WhatsApp Image 2026-10-29 at 16.45.23 (3).jpeg"
 ];
 
-// Generar la galería dinámicamente todas juntas hacia abajo
+// Generar la galería dinámicamente hacia abajo en una sola vista
 imagesList.forEach((filename, index) => {
     const card = document.createElement('div');
     card.classList.add('gallery-card');
@@ -129,4 +129,5 @@ imagesList.forEach((filename, index) => {
 });
 
 // Cerrar Modal
-closeModal.addEventListener('click
+closeModal.addEventListener('click', () => { modal.style.display = "none"; });
+window.addEventListener('click', (e) => { if (e.target === modal) modal.style.display = "none"; });

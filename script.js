@@ -84,10 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "WhatsApp Image 2026-10-29 at 16.45.23 (3).jpeg"
     ];
 
-    if (!galleryContainer) {
-        console.error("No se encontró el contenedor de la galería.");
-        return;
-    }
+    if (!galleryContainer) return;
 
     imagesList.forEach((filename, index) => {
         const card = document.createElement('div');
@@ -100,6 +97,15 @@ document.addEventListener("DOMContentLoaded", () => {
         img.src = filename;
         img.alt = `Modelo / Trofeo #${index + 1}`;
         img.loading = "lazy";
+
+        // Protección por si la imagen no carga (cambia a un aviso visual limpio)
+        img.onerror = function() {
+            this.style.display = 'none';
+            const errorMsg = document.createElement('div');
+            errorMsg.style.cssText = "color: #ffb703; padding: 20px; text-align: center; font-size: 12px;";
+            errorMsg.innerText = "⚠️ Imagen no encontrada (revisar extensión .jpg/.jpeg)";
+            imgContainer.appendChild(errorMsg);
+        };
 
         imgContainer.appendChild(img);
 

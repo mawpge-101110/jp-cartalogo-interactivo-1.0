@@ -64,7 +64,25 @@ document.addEventListener("DOMContentLoaded", () => {
         "WhatsApp Image 2026-08-06 at 12.06.46.jpeg",
         "WhatsApp Image 2026-08-06 at 12.06.47 (1).jpeg",
         "WhatsApp Image 2026-08-06 at 12.06.47.jpeg",
-        "WhatsApp Image 2026-08-06 at 12.06.48.jpeg"
+        "WhatsApp Image 2026-08-06 at 12.06.48.jpeg",
+        // Imágenes de Octubre con sus nombres originales de WhatsApp:
+        "WhatsApp Image 2026-10-29 at 16.45.14.jpeg",
+        "WhatsApp Image 2026-10-29 at 16.45.15.jpeg",
+        "WhatsApp Image 2026-10-29 at 16.45.16.jpeg",
+        "WhatsApp Image 2026-10-29 at 16.45.17.jpeg",
+        "WhatsApp Image 2026-10-29 at 16.45.18 (1).jpeg",
+        "WhatsApp Image 2026-10-29 at 16.45.18 (2).jpeg",
+        "WhatsApp Image 2026-10-29 at 16.45.18.jpeg",
+        "WhatsApp Image 2026-10-29 at 16.45.20 (1).jpeg",
+        "WhatsApp Image 2026-10-29 at 16.45.20 (2).jpeg",
+        "WhatsApp Image 2026-10-29 at 16.45.20.jpeg",
+        "WhatsApp Image 2026-10-29 at 16.45.21 (1).jpeg",
+        "WhatsApp Image 2026-10-29 at 16.45.21.jpeg",
+        "WhatsApp Image 2026-10-29 at 16.45.22.jpeg",
+        "WhatsApp Image 2026-10-29 at 16.45.23 (1).jpeg",
+        "WhatsApp Image 2026-10-29 at 16.45.23 (2).jpeg",
+        "WhatsApp Image 2026-10-29 at 16.45.23 (3).jpeg",
+        "WhatsApp Image 2026-10-29 at 16.45.23.jpeg"
     ];
 
     if (!galleryContainer) return;

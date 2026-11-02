@@ -65,23 +65,24 @@ document.addEventListener("DOMContentLoaded", () => {
         "WhatsApp Image 2026-08-06 at 12.06.47 (1).jpeg",
         "WhatsApp Image 2026-08-06 at 12.06.47.jpeg",
         "WhatsApp Image 2026-08-06 at 12.06.48.jpeg",
+        // Nuevas imágenes añadidas exactamente como están en GitHub:
+        "WhatsApp Image 2026-10-29 at 16.45.14.jpeg",
+        "WhatsApp Image 2026-10-29 at 16.45.15.jpeg",
+        "WhatsApp Image 2026-10-29 at 16.45.16.jpeg",
+        "WhatsApp Image 2026-10-29 at 16.45.17.jpeg",
         "WhatsApp Image 2026-10-29 at 16.45.18 (1).jpeg",
         "WhatsApp Image 2026-10-29 at 16.45.18 (2).jpeg",
+        "WhatsApp Image 2026-10-29 at 16.45.18.jpeg",
         "WhatsApp Image 2026-10-29 at 16.45.20 (1).jpeg",
-        "WhatsApp Image 2026-10-29 at 16.45.20.jpeg",
         "WhatsApp Image 2026-10-29 at 16.45.20 (2).jpeg",
-        "WhatsApp Image 2026-10-29 at 16.45.21.jpeg",
+        "WhatsApp Image 2026-10-29 at 16.45.20.jpeg",
         "WhatsApp Image 2026-10-29 at 16.45.21 (1).jpeg",
+        "WhatsApp Image 2026-10-29 at 16.45.21.jpeg",
         "WhatsApp Image 2026-10-29 at 16.45.22.jpeg",
         "WhatsApp Image 2026-10-29 at 16.45.23 (1).jpeg",
-        "WhatsApp Image 2026-10-29 at 16.45.23.jpeg",
         "WhatsApp Image 2026-10-29 at 16.45.23 (2).jpeg",
-        "WhatsApp Image 2026-10-29 at 16.45.21 (2).jpeg",
-        "WhatsApp Image 2026-10-29 at 16.45.19.jpeg",
-        "WhatsApp Image 2026-10-29 at 16.45.19 (1).jpeg",
-        "WhatsApp Image 2026-10-29 at 16.45.22 (1).jpeg",
-        "WhatsApp Image 2026-10-29 at 16.45.22 (2).jpeg",
-        "WhatsApp Image 2026-10-29 at 16.45.23 (3).jpeg"
+        "WhatsApp Image 2026-10-29 at 16.45.23 (3).jpeg",
+        "WhatsApp Image 2026-10-29 at 16.45.23.jpeg"
     ];
 
     if (!galleryContainer) return;
@@ -98,12 +99,11 @@ document.addEventListener("DOMContentLoaded", () => {
         img.alt = `Modelo / Trofeo #${index + 1}`;
         img.loading = "lazy";
 
-        // Protección por si la imagen no carga (cambia a un aviso visual limpio)
         img.onerror = function() {
             this.style.display = 'none';
             const errorMsg = document.createElement('div');
             errorMsg.style.cssText = "color: #ffb703; padding: 20px; text-align: center; font-size: 12px;";
-            errorMsg.innerText = "⚠️ Imagen no encontrada (revisar extensión .jpg/.jpeg)";
+            errorMsg.innerText = "⚠️ Imagen no encontrada";
             imgContainer.appendChild(errorMsg);
         };
 

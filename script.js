@@ -7,6 +7,7 @@ const closeModal = document.getElementsByClassName('close-modal')[0];
 
 const phoneNumber = "5493888650351";
 
+// Lista completa con todas tus imágenes (viejas y nuevas juntas en texto plano)
 const imagesList = [
     "WhatsApp Image 2026-07-23 at 13.33.22.jpeg",
     "WhatsApp Image 2026-07-23 at 13.33.26.jpeg",
@@ -64,6 +65,7 @@ const imagesList = [
     "WhatsApp Image 2026-08-06 at 12.06.47 (1).jpeg",
     "WhatsApp Image 2026-08-06 at 12.06.47.jpeg",
     "WhatsApp Image 2026-08-06 at 12.06.48.jpeg",
+    // Nuevas imágenes añadidas correctamente en texto plano:
     "WhatsApp Image 2026-10-29 at 16.45.18 (1).jpeg",
     "WhatsApp Image 2026-10-29 at 16.45.18 (2).jpeg",
     "WhatsApp Image 2026-10-29 at 16.45.20 (1).jpeg",
@@ -83,6 +85,7 @@ const imagesList = [
     "WhatsApp Image 2026-10-29 at 16.45.23 (3).jpeg"
 ];
 
+// Generar la galería dinámicamente de forma continua hacia abajo
 imagesList.forEach((filename, index) => {
     const card = document.createElement('div');
     card.classList.add('gallery-card');
@@ -113,6 +116,7 @@ imagesList.forEach((filename, index) => {
     card.appendChild(imgContainer);
     card.appendChild(info);
 
+    // Evento Zoom Modal
     card.addEventListener('click', () => {
         modal.style.display = "flex";
         modalImg.src = filename;
@@ -125,5 +129,6 @@ imagesList.forEach((filename, index) => {
     galleryContainer.appendChild(card);
 });
 
+// Cerrar Modal
 closeModal.addEventListener('click', () => { modal.style.display = "none"; });
 window.addEventListener('click', (e) => { if (e.target === modal) modal.style.display = "none"; });
